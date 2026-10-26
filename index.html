@@ -1,0 +1,84 @@
+<html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corcanti Chile | Lugares pet friendly</title>
+  <meta name="description" content="Encuentra cafés, parques, playas y hoteles que aceptan mascotas en Chile, con espacio para que hagan sus necesidades.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="logo" href="#"><img src="https://cdn-icons-png.flaticon.com/512/1582/1582023.png" alt="" width="32" height="32">CorCanti<span>Dogfriendly</span></a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#lugares">Lugares</a>
+      <a href="#consejos">Consejos</a>
+      <a href="#sobre">Sobre este sitio</a>
+    </nav>
+    <button id="btn-tema" class="btn-tema" aria-label="Cambiar entre modo claro y oscuro">Oscuro</button>
+  </header>
+
+  <main id="contenido">
+    <section class="hero">
+      <p class="insignia">Pensado para ti y tu mascota</p>
+      <img class="hero-img" src="https://static.vecteezy.com/system/resources/previews/028/760/838/non_2x/cute-cartoon-dog-free-png.png" alt="Perro de caricatura sonriendo" width="200">
+      <h1>Lugares donde tu mascota también es bienvenida</h1>
+      <p class="hero-texto">Cafés, parques, playas y hoteles de Chile que aceptan mascotas. Marcamos los que tienen un espacio para que hagan pis y caca.</p>
+      <ul class="chips">
+        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="22" height="22">Gratis</li>
+        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="22" height="22">Con espacio para necesidades</li>
+        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="22" height="22">De Arica a Punta Arenas</li>
+      </ul>
+    </section>
+
+    <section class="destacado" aria-labelledby="t-destacado">
+      <div>
+        <p class="insignia insignia-2">Para empezar</p>
+        <h2 id="t-destacado">Antes de salir con tu mascota</h2>
+        <p>Lleva bolsas, agua y correa. Revisa siempre las reglas del lugar: cada uno puede cambiar sus condiciones.</p>
+      </div>
+      <a class="boton" href="#lugares">Ver lugares</a>
+    </section>
+
+    <section id="lugares" class="lugares">
+      <h2>Explora a tu ritmo</h2>
+      <p class="sub">Busca por nombre o ciudad y filtra por tipo de lugar.</p>
+
+      <div class="controles">
+        <label class="buscador">
+          <span class="visualmente-oculto">Buscar lugares</span>
+          <input id="buscar" type="search" placeholder="Busca por nombre o ciudad">
+        </label>
+        <label class="check">
+          <input id="solo-espacio" type="checkbox"> Solo con espacio para necesidades
+        </label>
+      </div>
+
+      <div id="filtros" class="filtros" role="group" aria-label="Tipo de lugar"></div>
+      <p id="contador" class="contador" aria-live="polite"></p>
+      <div id="grilla" class="grilla"></div>
+    </section>
+
+    <section id="consejos" class="consejos">
+      <h2>Consejos rápidos</h2>
+      <ul>
+        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="28" height="28"><span>Recoge siempre las deposiciones y llévalas a un basurero.</span></li>
+        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="28" height="28"><span>Lleva agua, sobre todo en verano.</span></li>
+        <li><img src="https://images.icon-icons.com/317/PNG/512/phone-icon_34382.png" alt="" width="28" height="28"><span>Llama antes para confirmar que siguen aceptando mascotas.</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="sobre" class="pie">
+    <p><strong>Patitas en Chile</strong>: proyecto de práctica by: Snahoy.</p>
+    <p>Los lugares son datos de ejemplo. Verifica la información antes de ir.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
