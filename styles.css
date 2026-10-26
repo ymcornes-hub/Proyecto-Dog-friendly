@@ -180,3 +180,53 @@ img { max-width: 100%; height: auto; }
 .tarjeta .icono img { width: 40px; height: 40px; object-fit: contain; }
 .consejos li { display: flex; align-items: center; gap: .8rem; }
 .consejos li img { flex: none; object-fit: contain; }
+
+/* ---------- Logo de CorCanti ---------- */
+.logo-img { height: 50px; width: auto; display: block; border-radius: 10px; }
+:root[data-tema="oscuro"] .logo-img { background: #fff; padding: 6px; border-radius: 14px; } /* el logo es azul oscuro: lo apoyamos en blanco */
+
+/* ---------- Tarjetas clicables (abren el mapa) ---------- */
+.tarjeta.clicable { cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.tarjeta.clicable:hover { transform: translateY(-3px); }
+.direccion { font-size: .9rem; }
+.pista { font-size: .85rem; font-weight: 800; color: var(--color); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Servicios y eventos ---------- */
+.sub-titulo { font-size: 1.4rem; margin: 2.2rem 0 .3rem; }
+.lista-simple { margin: 0; padding-left: 1.1rem; color: var(--texto-suave); }
+.lista-simple li { margin-bottom: .3rem; }
+.horario { font-size: .95rem; }
+.enlace-oficial { font-weight: 800; color: var(--color); }
+.etiqueta.estado-si { background: color-mix(in srgb, var(--c-parque) 25%, transparent); align-self: flex-start; }
+.etiqueta.estado-confirmar { background: color-mix(in srgb, var(--acento) 40%, transparent); align-self: flex-start; }
+
+/* ---------- Formulario ---------- */
+.formulario {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;
+  background: var(--superficie); border: 2px solid var(--borde); border-radius: var(--radio);
+  padding: 1.4rem; box-shadow: var(--sombra);
+}
+.campo { display: grid; gap: .3rem; font-weight: 700; }
+.campo-ancho { grid-column: 1 / -1; }
+.campo input, .campo textarea {
+  font: inherit; font-weight: 400; padding: .65rem 1rem; border-radius: 14px;
+  border: 2px solid var(--borde); background: var(--fondo); color: var(--texto);
+}
+.formulario .boton { justify-self: start; border: 0; cursor: pointer; font: inherit; font-weight: 800; }
+.formulario .contador { align-self: center; margin: 0; }
+
+/* ---------- Botón secundario y centrar ---------- */
+.centrar { text-align: center; margin-top: 1.5rem; }
+.boton-sec { border: 2px solid var(--primario); background: transparent; color: var(--texto); cursor: pointer; font: inherit; font-weight: 800; box-shadow: none; }
+.boton-sec[hidden] { display: none; }
+
+/* ---------- Ventana del mapa ---------- */
+.mapa {
+  width: min(900px, 94vw); border: 3px solid var(--primario); border-radius: var(--radio);
+  background: var(--superficie); color: var(--texto); padding: 1.2rem; box-shadow: var(--sombra);
+}
+.mapa::backdrop { background: rgba(20, 15, 28, .6); }
+.mapa-cab { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.mapa-cab h2 { margin: 0; font-size: 1.5rem; }
+.mapa-dir { margin: .3rem 0 .8rem; color: var(--texto-suave); }
+.mapa iframe { width: 100%; height: min(55vh, 420px); border: 0; border-radius: 14px; margin-bottom: 1rem; background: var(--fondo); }

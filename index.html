@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -13,9 +14,10 @@
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
   <header class="cabecera">
-    <a class="logo" href="#"><img src="https://cdn-icons-png.flaticon.com/512/1582/1582023.png" alt="" width="32" height="32">CorCanti<span>Dogfriendly</span></a>
+    <a class="logo" href="#"><img class="logo-img" src="img/logo-corcanti.png" alt="CorCanti" width="50" height="50"><span>Dogfriendly</span></a>
     <nav class="menu" aria-label="Principal">
       <a href="#lugares">Lugares</a>
+      <a href="#servicios">Servicios</a>
       <a href="#consejos">Consejos</a>
       <a href="#sobre">Sobre este sitio</a>
     </nav>
@@ -46,12 +48,12 @@
 
     <section id="lugares" class="lugares">
       <h2>Explora a tu ritmo</h2>
-      <p class="sub">Busca por nombre o ciudad y filtra por tipo de lugar.</p>
+      <p class="sub">Busca por nombre o comuna y filtra por tipo de lugar.</p>
 
       <div class="controles">
         <label class="buscador">
           <span class="visualmente-oculto">Buscar lugares</span>
-          <input id="buscar" type="search" placeholder="Busca por nombre o ciudad">
+          <input id="buscar" type="search" placeholder="Busca por nombre o comuna">
         </label>
         <label class="check">
           <input id="solo-espacio" type="checkbox"> Solo con espacio para necesidades
@@ -61,12 +63,47 @@
       <div id="filtros" class="filtros" role="group" aria-label="Tipo de lugar"></div>
       <p id="contador" class="contador" aria-live="polite"></p>
       <div id="grilla" class="grilla"></div>
+      <p class="centrar"><button id="ver-mas" class="boton boton-sec" hidden>Ver más lugares</button></p>
+    </section>
+
+    <section id="servicios" class="servicios">
+      <h2>Servicios</h2>
+      <p class="sub">Dónde puedes viajar con tu mascota y qué condiciones piden. Las reglas cambian: confirma siempre en el sitio oficial.</p>
+
+      <h3 class="sub-titulo">Transporte</h3>
+      <div id="grilla-servicios" class="grilla"></div>
+
+      <h3 class="sub-titulo">Eventos y juntas</h3>
+      <p class="sub">Corridas familiares con perros, ferias de adopción y encuentros. Haz clic en un evento para ver dónde es.</p>
+      <div id="grilla-eventos" class="grilla"></div>
+
+      <h3 id="t-sugerir" class="sub-titulo">Sugiere un evento</h3>
+      <p class="sub">¿Conoces una junta o corrida que no está aquí? Cuéntanos y la revisamos.</p>
+      <form id="form-evento" class="formulario" aria-labelledby="t-sugerir">
+        <label class="campo">Nombre del evento
+          <input name="nombre" required maxlength="80" placeholder="Ej: Corrida con perros de mi comuna">
+        </label>
+        <label class="campo">Fecha
+          <input name="fecha" type="date">
+        </label>
+        <label class="campo">Lugar y comuna
+          <input name="lugar" required maxlength="120" placeholder="Ej: Parque Bicentenario, Vitacura">
+        </label>
+        <label class="campo">Enlace o Instagram (opcional)
+          <input name="enlace" maxlength="120" placeholder="@organizador o https://...">
+        </label>
+        <label class="campo campo-ancho">Cuéntanos más
+          <textarea name="detalle" rows="3" maxlength="400" placeholder="Hora, precio, si hay que inscribirse..."></textarea>
+        </label>
+        <button class="boton" type="submit">Enviar sugerencia</button>
+        <p id="msg-evento" class="contador" role="status"></p>
+      </form>
     </section>
 
     <section id="consejos" class="consejos">
       <h2>Consejos rápidos</h2>
       <ul>
-        <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="28" height="28"><span>Recoge siempre las deposiciones y llévalas a un basurero.</span></li>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png" alt="" width="28" height="28"><span>Recoge siempre las deposiciones y llévalas a un basurero.</span></li>
         <li><img src="https://genesistoxical.com/wp-content/uploads/2021/05/Hueso_animado_png.png" alt="" width="28" height="28"><span>Lleva agua, sobre todo en verano.</span></li>
         <li><img src="https://images.icon-icons.com/317/PNG/512/phone-icon_34382.png" alt="" width="28" height="28"><span>Llama antes para confirmar que siguen aceptando mascotas.</span></li>
       </ul>
@@ -75,8 +112,18 @@
 
   <footer id="sobre" class="pie">
     <p><strong>Patitas en Chile</strong>: proyecto de práctica by: Snahoy.</p>
-    <p>Los lugares son datos de ejemplo. Verifica la información antes de ir.</p>
+    <p>Lugares basados en la <a href="https://wowcan.cl/pages/guia-pet-friendly">guía pet friendly de Wow Can</a>. Las condiciones pueden cambiar: confirma con cada lugar antes de ir.</p>
   </footer>
+
+  <dialog id="mapa" class="mapa" aria-labelledby="mapa-titulo">
+    <div class="mapa-cab">
+      <h2 id="mapa-titulo">Mapa</h2>
+      <button id="mapa-cerrar" class="btn-tema" type="button">Cerrar</button>
+    </div>
+    <p id="mapa-dir" class="mapa-dir"></p>
+    <iframe id="mapa-marco" title="Mapa de Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <a id="mapa-enlace" class="boton" target="_blank" rel="noopener" href="#">Abrir en Google Maps</a>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
