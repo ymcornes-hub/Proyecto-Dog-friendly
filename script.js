@@ -12,7 +12,7 @@ const categorias = {
   hotel:       { nombre: "Hoteles",      color: "var(--c-hotel)" },
 };
 
-// ---------- Lugares (basados en la guía de Wow Can) ----------
+// ---------- Lugares  ----------
 // espacio: true = tiene canil, zona canina o patio para que hagan sus necesidades
 const lugares = [
   // Parques y caniles
@@ -95,7 +95,7 @@ const servicios = [
   { nombre: "Turbus", tipo: "Bus", color: "var(--c-cafe)", estado: "confirmar",
     condiciones: ["Transporta mascotas, pero las condiciones han cambiado con los años.", "Confirma si va en cabina o bodega y qué documentos piden.", "Los perros guía viajan gratis."],
     horario: "Consulta por tu ruta y fecha antes de comprar.",
-    enlace: "https://www.turbus.cl" },
+    enlace: "https://www.turbus.cl/pet-viajes" },
   { nombre: "LATAM", tipo: "Avión", color: "var(--c-playa)", estado: "confirmar",
     condiciones: ["Perros y gatos pequeños en cabina, en transportadora; reportes de 2023 hablan de unos 7 kg con todo incluido.", "Las mascotas más grandes pueden ir en bodega.", "Piden certificado de salud de un veterinario."],
     horario: "Se agrega al reservar; hay cupos limitados por vuelo.",
